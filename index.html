@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tiempo</title>
+  <meta name="description" content="Consulta el tiempo actual y la previsión de 5 días de cualquier ciudad.">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <main class="weather">
+    <h1>Tiempo</h1>
+
+    <form id="search" class="search" autocomplete="off">
+      <label for="city" class="sr-only">Ciudad</label>
+      <input id="city" type="search" placeholder="Busca una ciudad…" required>
+      <button type="submit">Buscar</button>
+    </form>
+
+    <p id="status" class="status" role="status"></p>
+
+    <section id="current" class="current" hidden>
+      <h2 id="place"></h2>
+      <div class="current__main">
+        <span id="icon" class="current__icon" aria-hidden="true"></span>
+        <span id="temp" class="current__temp"></span>
+      </div>
+      <p id="desc" class="current__desc"></p>
+      <dl class="current__details">
+        <div><dt>Sensación</dt><dd id="feels"></dd></div>
+        <div><dt>Viento</dt><dd id="wind"></dd></div>
+        <div><dt>Humedad</dt><dd id="humidity"></dd></div>
+      </dl>
+    </section>
+
+    <section id="forecast" class="forecast" aria-label="Previsión" hidden></section>
+
+    <p class="credit">Datos: <a href="https://open-meteo.com/" target="_blank" rel="noopener">Open-Meteo</a></p>
+  </main>
+  <script src="js/api.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
